@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Garagem Digital | EchoMechanic AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "primary-hover": "#0ea5d6",
+                        "accent-orange": "#FF9F1C",
+                        "background-dark": "#0B1215",
+                        "surface-dark": "#151F24",
+                        "surface-lighter": "#1E2A30",
+                        "text-dim": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: "Inter", sans-serif }
+        .text-glow { text-shadow: 0 0 10px rgba(19, 182, 236, 0.5) }
+        .neon-border { box-shadow: 0 0 5px rgba(19, 182, 236, 0.3) }::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1215; }
+        ::-webkit-scrollbar-thumb { background: #1E2A30; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #13b6ec; }
+    </style>
+</head>
+<body class="bg-background-dark text-white overflow-hidden selection:bg-primary selection:text-background-dark font-body antialiased">
+<div class="flex h-screen w-full">
+<aside class="w-72 h-full bg-surface-dark border-r border-surface-lighter flex flex-col hidden md:flex shrink-0">
+<div class="h-20 flex items-center px-6 border-b border-surface-lighter bg-surface-dark/50">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">graphic_eq</span>
+</div>
+<h2 class="text-white text-lg font-bold tracking-tight">EchoMechanic<span class="text-primary">.AI</span></h2>
+</div>
+</div>
+<nav class="flex-1 py-8 px-4 space-y-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-white rounded-lg border border-primary/20 shadow-[0_0_10px_rgba(19,182,236,0.1)] group relative overflow-hidden" href="#">
+<div class="absolute inset-0 bg-primary/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+<span class="material-symbols-outlined text-primary relative z-10">dashboard</span>
+<span class="font-semibold text-sm relative z-10">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-text-dim hover:text-white hover:bg-surface-lighter rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">add_circle</span>
+<span class="font-medium text-sm">Nova Análise</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-text-dim hover:text-white hover:bg-surface-lighter rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">history</span>
+<span class="font-medium text-sm">Histórico</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-text-dim hover:text-white hover:bg-surface-lighter rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="font-medium text-sm">Definições</span>
+</a>
+</nav>
+<div class="p-4 border-t border-surface-lighter bg-surface-dark">
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-lighter transition-colors cursor-pointer border border-transparent hover:border-surface-lighter">
+<div class="size-10 rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                        JD
+                    </div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold text-white truncate">João Dias</p>
+<p class="text-xs text-text-dim truncate">Mecânico Chefe</p>
+</div>
+<span class="material-symbols-outlined text-text-dim ml-auto text-lg">expand_more</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden relative bg-background-dark">
+<div class="absolute inset-0 bg-[url('https://placeholder.pics/svg/20')] opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#325a67 1px, transparent 1px); background-size: 24px 24px;"></div>
+<header class="h-20 border-b border-surface-lighter bg-background-dark/80 backdrop-blur-md flex items-center justify-between px-6 lg:px-8 z-20 shrink-0">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-text-dim hover:text-white p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div>
+<h1 class="text-2xl font-bold text-white tracking-tight">Minha Oficina</h1>
+<p class="text-xs text-text-dim hidden sm:block">Gerencie a saúde da sua frota em tempo real</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-text-dim hover:text-white hover:bg-surface-lighter rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-accent-orange rounded-full animate-pulse"></span>
+</button>
+<button class="flex items-center justify-center h-10 px-4 sm:px-6 rounded-lg bg-primary hover:bg-primary-hover text-background-dark font-bold text-sm shadow-[0_0_15px_rgba(19,182,236,0.3)] hover:shadow-[0_0_25px_rgba(19,182,236,0.5)] transition-all group">
+<span class="material-symbols-outlined text-xl mr-1 sm:mr-2 group-hover:rotate-90 transition-transform">add</span>
+<span class="hidden sm:inline">Nova Máquina</span>
+<span class="sm:hidden">Novo</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-4 lg:p-8 scroll-smooth">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 pb-12">
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-semibold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">garage_home</span>
+                                Garagem Digital
+                            </h2>
+<div class="flex bg-surface-dark border border-surface-lighter rounded-lg p-1">
+<button class="px-3 py-1 bg-surface-lighter rounded text-xs font-medium text-white shadow-sm transition-all">Todas</button>
+<button class="px-3 py-1 hover:bg-surface-lighter/50 rounded text-xs font-medium text-text-dim hover:text-white transition-all">Saudáveis</button>
+<button class="px-3 py-1 hover:bg-surface-lighter/50 rounded text-xs font-medium text-text-dim hover:text-white transition-all">Atenção</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-dark border border-accent-orange/40 rounded-xl p-5 hover:border-accent-orange hover:bg-surface-dark/80 transition-all hover:shadow-[0_0_20px_rgba(255,159,28,0.15)] group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-4 -top-4 size-20 bg-accent-orange/10 rounded-full blur-xl group-hover:bg-accent-orange/20 transition-all"></div>
+<div class="flex items-start justify-between mb-4 relative">
+<div class="size-12 rounded-lg bg-surface-lighter flex items-center justify-center text-text-dim border border-surface-lighter group-hover:text-white group-hover:border-accent-orange/30 transition-colors shadow-inner">
+<span class="material-symbols-outlined text-2xl">precision_manufacturing</span>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-accent-orange/10 text-accent-orange border border-accent-orange/20 animate-pulse">
+<span class="size-1.5 rounded-full bg-accent-orange mr-1.5"></span>
+                                        Atenção
+                                    </span>
+</div>
+<h3 class="text-white font-bold text-lg mb-1 truncate group-hover:text-accent-orange transition-colors">Compressor Ind. Alpha</h3>
+<p class="text-text-dim text-xs mb-5 font-mono">ID: #CMP-2024-001</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-lighter/50">
+<div class="flex flex-col">
+<span class="text-[10px] text-text-dim uppercase tracking-wider">Última Análise</span>
+<span class="text-sm text-white font-medium">Há 2 horas</span>
+</div>
+<span class="material-symbols-outlined text-accent-orange group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<div class="bg-surface-dark border border-surface-lighter rounded-xl p-5 hover:border-primary/50 transition-all hover:shadow-[0_0_15px_rgba(19,182,236,0.1)] group cursor-pointer relative">
+<div class="flex items-start justify-between mb-4">
+<div class="size-12 rounded-lg bg-surface-lighter flex items-center justify-center text-text-dim border border-surface-lighter group-hover:text-white group-hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-2xl">directions_car</span>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-500/10 text-green-400 border border-green-500/20">
+<span class="size-1.5 rounded-full bg-green-400 mr-1.5"></span>
+                                        Saudável
+                                    </span>
+</div>
+<h3 class="text-white font-bold text-lg mb-1 truncate group-hover:text-primary transition-colors">Ford Mustang GT</h3>
+<p class="text-text-dim text-xs mb-5 font-mono">ID: #VCL-998-GT</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-lighter/50">
+<div class="flex flex-col">
+<span class="text-[10px] text-text-dim uppercase tracking-wider">Última Análise</span>
+<span class="text-sm text-white font-medium">Ontem</span>
+</div>
+<span class="material-symbols-outlined text-primary opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+</div>
+<div class="bg-surface-dark border border-surface-lighter rounded-xl p-5 hover:border-primary/50 transition-all hover:shadow-[0_0_15px_rgba(19,182,236,0.1)] group cursor-pointer">
+<div class="flex items-start justify-between mb-4">
+<div class="size-12 rounded-lg bg-surface-lighter flex items-center justify-center text-text-dim border border-surface-lighter group-hover:text-white group-hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-2xl">forklift</span>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-500/10 text-green-400 border border-green-500/20">
+<span class="size-1.5 rounded-full bg-green-400 mr-1.5"></span>
+                                        Saudável
+                                    </span>
+</div>
+<h3 class="text-white font-bold text-lg mb-1 truncate group-hover:text-primary transition-colors">Empilhadora Toyota</h3>
+<p class="text-text-dim text-xs mb-5 font-mono">ID: #LIFT-552</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-lighter/50">
+<div class="flex flex-col">
+<span class="text-[10px] text-text-dim uppercase tracking-wider">Última Análise</span>
+<span class="text-sm text-white font-medium">3 dias atrás</span>
+</div>
+<span class="material-symbols-outlined text-primary opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+</div>
+<div class="bg-surface-dark/30 border border-dashed border-surface-lighter rounded-xl p-5 hover:border-primary/40 hover:bg-surface-dark/60 transition-all group cursor-pointer flex flex-col items-center justify-center text-center h-full min-h-[180px]">
+<div class="size-14 rounded-full bg-surface-lighter flex items-center justify-center text-text-dim mb-3 group-hover:text-primary group-hover:bg-primary/10 group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<h3 class="text-text-dim font-medium text-sm group-hover:text-white transition-colors">Registar Nova Máquina</h3>
+<p class="text-xs text-text-dim/50 mt-1">Ligar via Bluetooth ou Upload</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1">
+<div class="bg-surface-dark border border-surface-lighter rounded-xl overflow-hidden flex flex-col h-auto lg:h-[calc(100vh-140px)] sticky top-4 shadow-xl">
+<div class="p-5 border-b border-surface-lighter flex justify-between items-center bg-surface-dark/95 backdrop-blur">
+<h3 class="font-bold text-white text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">history_edu</span>
+                                     Atividade
+                                 </h3>
+<button class="text-xs font-semibold text-primary hover:text-white transition-colors px-2 py-1 hover:bg-primary/10 rounded">Ver tudo</button>
+</div>
+<div class="flex-1 overflow-y-auto p-2 space-y-1">
+<div class="flex gap-3 p-3 hover:bg-surface-lighter/40 rounded-lg transition-colors cursor-default group border border-transparent hover:border-surface-lighter/50">
+<div class="flex flex-col items-center mt-1">
+<div class="size-2.5 rounded-full bg-accent-orange shadow-[0_0_8px_#FF9F1C]"></div>
+<div class="w-px h-full bg-surface-lighter/50 mt-1 group-last:hidden"></div>
+</div>
+<div class="pb-3 w-full">
+<div class="flex justify-between items-start">
+<p class="text-sm text-white font-medium">Anomalia detetada</p>
+<span class="text-[10px] text-text-dim/60 font-mono">14:30</span>
+</div>
+<p class="text-xs text-text-dim mt-0.5 line-clamp-1">Compressor Ind. Alpha - Ruído de rolamento</p>
+<div class="mt-2 inline-flex items-center gap-1 px-2 py-0.5 rounded bg-accent-orange/10 border border-accent-orange/20">
+<span class="text-[10px] text-accent-orange font-bold">Ação Necessária</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3 p-3 hover:bg-surface-lighter/40 rounded-lg transition-colors cursor-default group border border-transparent hover:border-surface-lighter/50">
+<div class="flex flex-col items-center mt-1">
+<div class="size-2.5 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></div>
+<div class="w-px h-full bg-surface-lighter/50 mt-1 group-last:hidden"></div>
+</div>
+<div class="pb-3 w-full">
+<div class="flex justify-between items-start">
+<p class="text-sm text-white font-medium">Diagnóstico Concluído</p>
+<span class="text-[10px] text-text-dim/60 font-mono">Ontem</span>
+</div>
+<p class="text-xs text-text-dim mt-0.5">Ford Mustang GT - Sistema OK</p>
+</div>
+</div>
+<div class="flex gap-3 p-3 hover:bg-surface-lighter/40 rounded-lg transition-colors cursor-default group border border-transparent hover:border-surface-lighter/50">
+<div class="flex flex-col items-center mt-1">
+<div class="size-2.5 rounded-full bg-primary shadow-[0_0_8px_#13b6ec]"></div>
+<div class="w-px h-full bg-surface-lighter/50 mt-1 group-last:hidden"></div>
+</div>
+<div class="pb-3 w-full">
+<div class="flex justify-between items-start">
+<p class="text-sm text-white font-medium">Nova máquina</p>
+<span class="text-[10px] text-text-dim/60 font-mono">3d atrás</span>
+</div>
+<p class="text-xs text-text-dim mt-0.5">Empilhadora Toyota registada</p>
+</div>
+</div>
+<div class="flex gap-3 p-3 hover:bg-surface-lighter/40 rounded-lg transition-colors cursor-default group border border-transparent hover:border-surface-lighter/50">
+<div class="flex flex-col items-center mt-1">
+<div class="size-2.5 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></div>
+<div class="w-px h-full bg-surface-lighter/50 mt-1 group-last:hidden"></div>
+</div>
+<div class="pb-3 w-full">
+<div class="flex justify-between items-start">
+<p class="text-sm text-white font-medium">Diagnóstico Concluído</p>
+<span class="text-[10px] text-text-dim/60 font-mono">5d atrás</span>
+</div>
+<p class="text-xs text-text-dim mt-0.5">Gerador Diesel X500 - Sistema OK</p>
+</div>
+</div>
+</div>
+<div class="p-4 mt-auto border-t border-surface-lighter bg-gradient-to-b from-surface-dark to-surface-lighter/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-base animate-pulse">auto_awesome</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Gemini 3 Pro Insight</span>
+</div>
+<p class="text-xs text-text-dim leading-relaxed">
+                                     Recomendação: O <span class="text-white font-medium">Compressor Alpha</span> apresenta padrões de vibração consistentes com desgaste de rolamentos. Agendar manutenção em <span class="text-accent-orange">48h</span>.
+                                 </p>
+<button class="w-full mt-3 py-1.5 rounded bg-primary/10 border border-primary/20 text-primary text-xs font-bold hover:bg-primary hover:text-background-dark transition-all">
+                                     Ver Análise Detalhada
+                                 </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

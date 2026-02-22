@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EchoMechanic AI - Histórico de Análises</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "primary-dark": "#0ea5d6",
+                        "secondary": "#ff6b00",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0b1215",
+                        "surface-dark": "#162328",
+                        "surface-darker": "#111e22",
+                        "border-dark": "#233f48",
+                        "text-muted": "#92bbc9",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111e22; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #233f48; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #325a67; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex antialiased selection:bg-primary selection:text-white">
+<aside class="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-border-dark bg-surface-darker/95 backdrop-blur z-50">
+<div class="flex items-center gap-3 px-6 h-16 border-b border-border-dark">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">EchoMechanic</h2>
+</div>
+<nav class="flex-1 px-4 py-6 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:text-white hover:bg-surface-dark transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:text-white hover:bg-surface-dark transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">add_circle</span>
+<span class="text-sm font-medium">Nova Análise</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-white border border-primary/20 transition-all shadow-[0_0_15px_-5px_rgba(19,182,236,0.3)]" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary">history</span>
+<span class="text-sm font-bold">Histórico</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-muted hover:text-white hover:bg-surface-dark transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Definições</span>
+</a>
+</nav>
+<div class="p-4 border-t border-border-dark bg-surface-darker">
+<button class="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-surface-dark transition-colors group">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-10 border border-border-dark group-hover:border-primary transition-colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvYQytpug96lVHtIrWcE8efYlQO-HHkTkeYLuQgY64Q7vaTBwJAfdV3_BiakBB3ZURSvvqtnP43Y78unQqj50ZKRWuBtuIipkHgToy2TTTTSqHNI521Et638e4tL6UMKVEmoreNYmNMaYRWkvnoKx208Pxkxa3uiTARL7FId4KGCOELlAU83idVIxk7Zi2GUFYMAnrHiUkOE4v5M-ZibBuPbHOYJcmyoZ1cUVmu9ycCW6g8NfeuTm6ZeZBVo9ofODfR_PgKrC8bWs-");'></div>
+<div class="text-left flex-1 min-w-0">
+<p class="text-sm font-bold text-white truncate">Carlos M.</p>
+<p class="text-xs text-text-muted truncate">Eng. Chefe</p>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary text-[18px]">logout</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto bg-background-dark">
+<header class="lg:hidden sticky top-0 z-40 flex items-center justify-between px-6 py-3 border-b border-border-dark bg-surface-darker/95 backdrop-blur h-16">
+<div class="flex items-center gap-3 text-white">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="font-bold text-lg">EchoMechanic</h2>
+</div>
+<button class="text-text-muted">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="p-6 lg:p-10 w-full max-w-7xl mx-auto flex flex-col gap-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h1 class="text-3xl font-black text-white tracking-tight mb-2">Histórico de Análises</h1>
+<p class="text-text-muted text-sm">Visualize o histórico completo de diagnósticos e relatórios de manutenção.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-dark border border-border-dark text-white hover:bg-surface-darker transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Exportar CSV
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-surface-darker text-sm font-bold transition-colors shadow-[0_0_15px_-5px_rgba(19,182,236,0.4)]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Nova Análise
+                    </button>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-4 shadow-lg flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="relative w-full md:w-96 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-darker border border-border-dark text-white text-sm rounded-lg pl-10 pr-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary placeholder-text-muted/50 transition-all" placeholder="Pesquisar por máquina, ID ou alerta..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+<div class="relative">
+<select class="appearance-none bg-surface-darker border border-border-dark text-white text-sm rounded-lg pl-4 pr-10 py-2.5 focus:border-primary focus:ring-primary cursor-pointer hover:border-text-muted/30 transition-colors">
+<option>Todos os Status</option>
+<option>Crítico</option>
+<option>Atenção</option>
+<option>Normal</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-[18px]">expand_more</span>
+</div>
+<div class="relative">
+<input class="bg-surface-darker border border-border-dark text-text-muted text-sm rounded-lg px-4 py-2.5 focus:border-primary focus:ring-primary cursor-pointer hover:text-white transition-colors [&amp;::-webkit-calendar-picker-indicator]:invert [&amp;::-webkit-calendar-picker-indicator]:opacity-50" type="date"/>
+</div>
+<button class="p-2.5 rounded-lg bg-surface-darker border border-border-dark text-text-muted hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined block text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl shadow-lg overflow-hidden flex-1 flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-border-dark bg-surface-darker/50">
+<th class="py-4 px-6 text-xs font-bold text-text-muted uppercase tracking-wider w-[30%]">Máquina / Equipamento</th>
+<th class="py-4 px-6 text-xs font-bold text-text-muted uppercase tracking-wider w-[15%]">Data Diagnóstico</th>
+<th class="py-4 px-6 text-xs font-bold text-text-muted uppercase tracking-wider w-[25%]">Problema Detetado</th>
+<th class="py-4 px-6 text-xs font-bold text-text-muted uppercase tracking-wider w-[15%]">Status</th>
+<th class="py-4 px-6 text-xs font-bold text-text-muted uppercase tracking-wider w-[15%] text-right">Ação</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark">
+<tr class="group hover:bg-surface-darker/30 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-surface-darker border border-border-dark flex items-center justify-center text-primary group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Compressor Alpha</p>
+<p class="text-text-muted text-xs">ID: #992-XC</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col">
+<span class="text-white text-sm font-medium">Hoje</span>
+<span class="text-text-muted text-xs">10:42 AM</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-white text-sm font-medium truncate max-w-[200px]">Microfissura Rolamento Traseiro</p>
+<p class="text-text-muted text-xs">Pico Anómalo: 15kHz</p>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 rounded bg-red-500/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-red-500 ring-1 ring-inset ring-red-500/20">
+<span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        Crítico
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-primary hover:text-white text-sm font-bold hover:underline transition-all">Ver Detalhes</button>
+</td>
+</tr>
+<tr class="group hover:bg-surface-darker/30 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-surface-darker border border-border-dark flex items-center justify-center text-primary group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Bomba Hidráulica B2</p>
+<p class="text-text-muted text-xs">ID: #405-HB</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col">
+<span class="text-white text-sm font-medium">Ontem</span>
+<span class="text-text-muted text-xs">16:15 PM</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-white text-sm font-medium truncate max-w-[200px]">Vibração Excessiva Eixo</p>
+<p class="text-text-muted text-xs">Desalinhamento</p>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 rounded bg-secondary/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-secondary ring-1 ring-inset ring-secondary/20">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+                                        Atenção
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-primary hover:text-white text-sm font-bold hover:underline transition-all">Ver Detalhes</button>
+</td>
+</tr>
+<tr class="group hover:bg-surface-darker/30 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-surface-darker border border-border-dark flex items-center justify-center text-primary group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined">toys</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Turbina Ventilação 01</p>
+<p class="text-text-muted text-xs">ID: #101-TV</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col">
+<span class="text-white text-sm font-medium">12 Out 2023</span>
+<span class="text-text-muted text-xs">09:00 AM</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-white text-sm font-medium truncate max-w-[200px]">Sem anomalias detetadas</p>
+<p class="text-text-muted text-xs">Operação Nominal</p>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 rounded bg-green-500/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-green-500 ring-1 ring-inset ring-green-500/20">
+<span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
+                                        Normal
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-text-muted hover:text-white text-sm font-medium hover:underline transition-all">Ver Detalhes</button>
+</td>
+</tr>
+<tr class="group hover:bg-surface-darker/30 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-surface-darker border border-border-dark flex items-center justify-center text-primary group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Gerador Auxiliar G-4</p>
+<p class="text-text-muted text-xs">ID: #G4-AUX</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col">
+<span class="text-white text-sm font-medium">10 Out 2023</span>
+<span class="text-text-muted text-xs">14:20 PM</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-white text-sm font-medium truncate max-w-[200px]">Falha Lubrificação</p>
+<p class="text-text-muted text-xs">Temperatura Alta</p>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 rounded bg-blue-500/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-blue-400 ring-1 ring-inset ring-blue-500/20">
+<span class="material-symbols-outlined text-[12px]">check</span>
+                                        Resolvido
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-text-muted hover:text-white text-sm font-medium hover:underline transition-all">Ver Relatório</button>
+</td>
+</tr>
+<tr class="group hover:bg-surface-darker/30 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-surface-darker border border-border-dark flex items-center justify-center text-primary group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined">settings_input_component</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Tapete Rolante 03</p>
+<p class="text-text-muted text-xs">ID: #TR-03</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col">
+<span class="text-white text-sm font-medium">08 Out 2023</span>
+<span class="text-text-muted text-xs">08:00 AM</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-white text-sm font-medium truncate max-w-[200px]">Sem anomalias detetadas</p>
+<p class="text-text-muted text-xs">Verificação Periódica</p>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 rounded bg-green-500/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-green-500 ring-1 ring-inset ring-green-500/20">
+<span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
+                                        Normal
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-text-muted hover:text-white text-sm font-medium hover:underline transition-all">Ver Detalhes</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-surface-darker border-t border-border-dark p-4 flex items-center justify-between">
+<p class="text-text-muted text-xs">A mostrar <span class="font-bold text-white">1</span> a <span class="font-bold text-white">5</span> de <span class="font-bold text-white">128</span> resultados</p>
+<div class="flex items-center gap-2">
+<button class="p-1 rounded hover:bg-surface-dark text-text-muted disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="size-7 flex items-center justify-center rounded bg-primary text-surface-darker font-bold text-xs">1</button>
+<button class="size-7 flex items-center justify-center rounded hover:bg-surface-dark text-text-muted text-xs transition-colors">2</button>
+<button class="size-7 flex items-center justify-center rounded hover:bg-surface-dark text-text-muted text-xs transition-colors">3</button>
+<span class="text-text-muted text-xs">...</span>
+<button class="p-1 rounded hover:bg-surface-dark text-text-muted transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

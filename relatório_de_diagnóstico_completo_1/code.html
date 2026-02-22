@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EchoMechanic AI - Relatório de Diagnóstico</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "primary-dark": "#0ea5d6",
+                        "secondary": "#ff6b00", // Orange accent
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0b1215",
+                        "surface-dark": "#162328",
+                        "surface-darker": "#111e22",
+                        "border-dark": "#233f48",
+                        "text-muted": "#92bbc9",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for deep dark vibe */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111e22; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #233f48; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #325a67; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-border-dark bg-surface-darker/95 backdrop-blur px-6 py-3 h-16">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">EchoMechanic AI</h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-center gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-white text-sm font-medium leading-normal border-b-2 border-primary pb-0.5" href="#">Alertas</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Equipamento</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Relatórios</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-secondary rounded-full"></span>
+</button>
+<div class="h-8 w-px bg-border-dark mx-2"></div>
+<button class="flex items-center gap-3 cursor-pointer group">
+<div class="text-right hidden sm:block">
+<p class="text-xs text-text-muted group-hover:text-primary transition-colors">Eng. Chefe</p>
+<p class="text-sm font-bold text-white">Carlos M.</p>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-10 border border-border-dark group-hover:border-primary transition-colors" data-alt="User profile picture of an engineer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvYQytpug96lVHtIrWcE8efYlQO-HHkTkeYLuQgY64Q7vaTBwJAfdV3_BiakBB3ZURSvvqtnP43Y78unQqj50ZKRWuBtuIipkHgToy2TTTTSqHNI521Et638e4tL6UMKVEmoreNYmNMaYRWkvnoKx208Pxkxa3uiTARL7FId4KGCOELlAU83idVIxk7Zi2GUFYMAnrHiUkOE4v5M-ZibBuPbHOYJcmyoZ1cUVmu9ycCW6g8NfeuTm6ZeZBVo9ofODfR_PgKrC8bWs-");'></div>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col p-4 lg:p-8 max-w-[1600px] mx-auto w-full">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<h1 class="text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-tight">
+                        Falha Crítica Detetada
+                    </h1>
+<span class="inline-flex items-center gap-1.5 rounded bg-red-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-500 ring-1 ring-inset ring-red-500/20">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+</span>
+                        Crítico
+                    </span>
+</div>
+<div class="flex items-center gap-2 text-text-muted text-sm">
+<span>Compressor Alpha</span>
+<span class="text-border-dark">•</span>
+<span>Alerta #992</span>
+<span class="text-border-dark">•</span>
+<span class="text-primary">Ocorreu há 12 min</span>
+</div>
+</div>
+<button class="flex items-center justify-center gap-2 rounded-lg bg-surface-dark border border-border-dark hover:bg-surface-darker text-white text-sm font-bold px-6 py-2.5 transition-all hover:border-text-muted/30">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Voltar à Lista</span>
+</button>
+</div>
+<!-- 3-Column Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-12 gap-6 h-full flex-1">
+<!-- Column 1: Technical Data (Left) -->
+<div class="lg:col-span-1 xl:col-span-3 flex flex-col gap-6">
+<!-- Machine Info Card -->
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 shadow-lg">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-lg bg-surface-darker border border-border-dark flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Compressor Alpha</h3>
+<p class="text-text-muted text-xs">Unidade de Compressão #4</p>
+</div>
+</div>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded border border-primary/20">ATIVO</span>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="bg-surface-darker p-3 rounded border border-border-dark/50">
+<p class="text-text-muted text-[10px] uppercase font-bold tracking-wider mb-1">ID da Máquina</p>
+<p class="text-white font-mono font-medium">#992-XC</p>
+</div>
+<div class="bg-surface-darker p-3 rounded border border-border-dark/50">
+<p class="text-text-muted text-[10px] uppercase font-bold tracking-wider mb-1">Horas de Uso</p>
+<p class="text-white font-mono font-medium">4,200h</p>
+</div>
+</div>
+<div class="flex items-center gap-2 text-xs text-text-muted border-t border-border-dark pt-3">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span>Sensor S-04 (Acústico) • Piso 2</span>
+</div>
+</div>
+<!-- Spectrogram Card -->
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 shadow-lg flex-1 flex flex-col min-h-[300px]">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-white font-bold text-sm uppercase tracking-wide">Análise Espectral</h3>
+<span class="text-xs text-red-400 font-bold animate-pulse">Anomalia 15kHz</span>
+</div>
+<div class="relative flex-1 bg-surface-darker rounded border border-border-dark overflow-hidden group">
+<!-- Simulated Spectrogram Graphic -->
+<div class="absolute inset-0 opacity-80" style="background: linear-gradient(180deg, #162328 0%, #111e22 100%);">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 200">
+<defs>
+<lineargradient id="spectrogram-gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#ff6b00;stop-opacity:1"></stop>
+<stop offset="30%" style="stop-color:#ff6b00;stop-opacity:0.6"></stop>
+<stop offset="60%" style="stop-color:#13b6ec;stop-opacity:0.4"></stop>
+<stop offset="100%" style="stop-color:#13b6ec;stop-opacity:0.1"></stop>
+</lineargradient>
+</defs>
+<!-- Background noise -->
+<path d="M0,180 Q20,170 40,180 T80,180 T120,175 T160,180 T200,178 T240,180 T280,175 T320,180 T360,178 T400,180 V200 H0 Z" fill="#233f48" opacity="0.3"></path>
+<!-- The spike -->
+<path d="M0,150 L50,140 L100,145 L140,140 L160,60 L180,40 L200,70 L220,140 L260,145 L300,140 L350,148 L400,150 V200 H0 Z" fill="url(#spectrogram-gradient)"></path>
+<path d="M0,150 L50,140 L100,145 L140,140 L160,60 L180,40 L200,70 L220,140 L260,145 L300,140 L350,148 L400,150" fill="none" stroke="#13b6ec" stroke-width="2"></path>
+<!-- Highlight the peak -->
+<circle class="animate-ping" cx="180" cy="40" fill="#fff" r="4" stroke="#ff6b00" stroke-width="2" style="animation-duration: 2s;"></circle>
+<circle cx="180" cy="40" fill="#ff6b00" r="3"></circle>
+</svg>
+</div>
+<!-- Axis Labels -->
+<div class="absolute bottom-1 left-2 text-[9px] text-text-muted font-mono">0Hz</div>
+<div class="absolute bottom-1 right-2 text-[9px] text-text-muted font-mono">20kHz</div>
+<div class="absolute top-1 left-1 text-[9px] text-text-muted font-mono">dB</div>
+<!-- Overlay Text for Context -->
+<div class="absolute top-8 left-1/2 -translate-x-1/2 bg-surface-darker/90 backdrop-blur px-2 py-1 rounded border border-secondary/50 text-secondary text-[10px] font-bold shadow-lg">
+                            Pico Crítico: 85dB
+                        </div>
+</div>
+<div class="mt-4 flex gap-3">
+<div class="flex-1 bg-surface-darker p-3 rounded border border-border-dark flex flex-col justify-center">
+<span class="text-[10px] text-text-muted uppercase font-bold">Confiança IA</span>
+<span class="text-primary font-bold text-xl">98.4%</span>
+</div>
+<div class="flex-1 bg-surface-darker p-3 rounded border border-border-dark flex flex-col justify-center relative overflow-hidden">
+<div class="absolute right-0 top-0 p-1 opacity-10">
+<span class="material-symbols-outlined text-4xl text-white">euro</span>
+</div>
+<span class="text-[10px] text-text-muted uppercase font-bold">Custo Estimado</span>
+<span class="text-white font-bold text-xl">120€ - 180€</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: Guided Action (Center - Highlight) -->
+<div class="lg:col-span-1 xl:col-span-6 flex flex-col gap-6">
+<div class="bg-surface-dark border border-primary/30 rounded-xl shadow-[0_0_40px_-15px_rgba(19,182,236,0.15)] flex flex-col h-full overflow-hidden">
+<div class="p-6 border-b border-border-dark bg-gradient-to-r from-surface-dark to-surface-darker relative">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-8xl text-primary">psychology</span>
+</div>
+<div class="flex items-center gap-3 mb-2">
+<div class="bg-primary text-surface-darker p-1 rounded">
+<span class="material-symbols-outlined text-lg block">auto_fix_high</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">Plano de Reparação AI</h2>
+</div>
+<p class="text-text-muted text-sm max-w-md">O modelo gerou um plano de 3 passos baseado no padrão de onda e manuais técnicos disponíveis.</p>
+</div>
+<!-- Interactive Checklist -->
+<div class="flex-1 overflow-y-auto p-4 flex flex-col gap-3">
+<!-- Step 1: Active -->
+<div class="rounded-lg border border-primary/40 bg-surface-darker overflow-hidden transition-all duration-300 shadow-md">
+<div class="flex items-center justify-between p-4 bg-primary/5 cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-8 rounded-full bg-primary text-surface-darker font-bold text-sm">1</div>
+<h3 class="text-white font-bold text-base">Bloqueio de Segurança</h3>
+</div>
+<span class="material-symbols-outlined text-primary">expand_less</span>
+</div>
+<div class="p-5 border-t border-primary/10">
+<p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                    Antes de iniciar qualquer intervenção, execute o procedimento <strong class="text-white">LOTO (Lockout/Tagout)</strong>. Certifique-se de que a alimentação elétrica do compressor está completamente cortada e bloqueada.
+                                </p>
+<div class="bg-surface-dark border border-border-dark rounded p-3 mb-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-yellow-500 text-sm">warning</span>
+<span class="text-xs font-bold text-yellow-500 uppercase">Atenção</span>
+</div>
+<p class="text-xs text-text-muted">Verifique o manômetro de pressão residual. Deve marcar 0 PSI antes de abrir a unidade.</p>
+</div>
+<label class="flex items-center gap-3 p-3 rounded hover:bg-white/5 border border-transparent hover:border-border-dark cursor-pointer transition-colors group">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-gray-600 bg-surface-dark focus:ring-offset-surface-darker focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium text-white group-hover:text-primary transition-colors">Confirmar bloqueio de energia realizado</span>
+</label>
+</div>
+</div>
+<!-- Step 2: Inactive -->
+<div class="rounded-lg border border-border-dark bg-surface-darker/50 opacity-80 hover:opacity-100 transition-all duration-300">
+<div class="flex items-center justify-between p-4 cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-8 rounded-full bg-surface-dark border border-border-dark text-text-muted font-bold text-sm">2</div>
+<h3 class="text-text-muted font-medium text-base">Remoção da Tampa B</h3>
+</div>
+<span class="material-symbols-outlined text-text-muted">expand_more</span>
+</div>
+</div>
+<!-- Step 3: Inactive -->
+<div class="rounded-lg border border-border-dark bg-surface-darker/50 opacity-80 hover:opacity-100 transition-all duration-300">
+<div class="flex items-center justify-between p-4 cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-8 rounded-full bg-surface-dark border border-border-dark text-text-muted font-bold text-sm">3</div>
+<h3 class="text-text-muted font-medium text-base">Substituir Rolamento</h3>
+</div>
+<span class="material-symbols-outlined text-text-muted">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="p-6 border-t border-border-dark bg-surface-darker mt-auto">
+<button class="w-full flex items-center justify-center gap-2 rounded-lg bg-primary hover:bg-primary-dark text-surface-darker text-sm font-bold h-12 px-6 transition-all shadow-[0_0_20px_-5px_rgba(19,182,236,0.4)] hover:shadow-[0_0_25px_-5px_rgba(19,182,236,0.6)]">
+<span class="material-symbols-outlined">check_circle</span>
+<span>Marcar como Resolvido</span>
+</button>
+<p class="text-center text-xs text-text-muted mt-3">Esta ação irá fechar o alerta e registar a manutenção.</p>
+</div>
+</div>
+</div>
+<!-- Column 3: RAG/Knowledge (Right) -->
+<div class="lg:col-span-1 xl:col-span-3 flex flex-col gap-6">
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 shadow-lg flex-1 flex flex-col">
+<div class="flex items-center gap-2 mb-6 border-b border-border-dark pb-4">
+<span class="material-symbols-outlined text-text-muted">library_books</span>
+<h3 class="text-white font-bold text-base">Manual &amp; Referências</h3>
+</div>
+<!-- PDF Card -->
+<div class="group relative flex items-center gap-4 p-4 rounded-lg bg-surface-darker border border-border-dark hover:border-primary/50 transition-all cursor-pointer mb-6">
+<div class="size-12 bg-red-500/10 rounded flex items-center justify-center text-red-500 border border-red-500/20 group-hover:bg-red-500/20 transition-colors">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-white text-sm font-bold truncate">Manual Serviço Alpha v2.pdf</p>
+<p class="text-xs text-text-muted">Pág 42 • Rev. 2023</p>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">open_in_new</span>
+</div>
+<!-- RAG Content Box -->
+<div class="flex-1 flex flex-col gap-2">
+<p class="text-xs font-bold text-primary uppercase tracking-wider mb-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+                            Excerto Relevante
+                        </p>
+<div class="bg-surface-darker rounded-lg p-4 border border-border-dark relative flex-1">
+<span class="absolute top-3 left-3 text-border-dark text-4xl leading-none font-serif opacity-50">"</span>
+<div class="relative z-10">
+<p class="text-text-muted text-sm font-mono leading-relaxed">
+                                    Para anomalias de alta frequência (&gt;14kHz) em compressores da série Alpha, verifique a integridade do rolamento traseiro. Ruídos acima de 80dB indicam microfissuras na pista externa.
+                                </p>
+<div class="my-3 h-px bg-border-dark w-full"></div>
+<p class="text-text-muted text-sm font-mono leading-relaxed">
+<span class="text-white font-bold">Ação:</span> Substituição imediata recomendada para evitar gripagem do eixo principal.
+                                </p>
+</div>
+</div>
+</div>
+<button class="mt-4 w-full flex items-center justify-center gap-2 rounded border border-border-dark hover:bg-surface-darker text-white text-xs font-bold h-9 transition-colors">
+                        Ver Documento Original
+                    </button>
+</div>
+<!-- Support Contact Mini Card -->
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 flex items-center gap-3 shadow-lg">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-border-dark" data-alt="Technical support specialist avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUI6A2MK-5ojRWq06pUckJ-7okqXK8Jx8HHG-VBYcmQmzxYT26rfpMN2kbVhoj5kaguNWVyvamOPygil4DsluQiKMLcfPwObs37v7pidlplonElo4dr5JD4qPk-xA7lrFiptkUjCEtAD_Z-C2njMggqEwGVKzdPHU_CHAip9jGwhq33ZffTLlDFNsBuO3KvcJwasN5lRayBFpRClIs7hfknccQgcACAPUX331D-qxzUQfmo8bm4JMN1-LYvGiMKNjQXj8y79bEBP2g");'></div>
+<div class="flex-1">
+<p class="text-white text-sm font-bold">Dúvidas?</p>
+<p class="text-text-muted text-xs">Contactar Supervisor</p>
+</div>
+<button class="size-8 rounded-full bg-surface-darker border border-border-dark flex items-center justify-center text-white hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined text-sm">chat</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

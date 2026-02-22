@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recuperar Password - EchoMechanic AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#22d3ee", // Cyan-400/500 style from dashboard button
+              "primary-hover": "#06b6d4",
+              "background-dark": "#111315", // Deep charcoal/black from dashboard bg
+              "card-dark": "#1a1d21", // Slightly lighter for cards
+              "card-border": "#2e3238", // Subtle border
+              "sidebar-dark": "#16191d",
+              "input-bg": "#23272e",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.375rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1rem",
+            },
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-dark font-display antialiased text-slate-100 min-h-screen flex flex-col relative overflow-hidden">
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary/5 blur-[120px]"></div>
+</div>
+<main class="relative z-10 flex flex-col items-center justify-center flex-grow p-4 sm:p-6 lg:p-8 w-full h-full">
+<div class="mb-10 flex flex-col items-center">
+<div class="flex items-center gap-3 mb-2">
+<div class="flex items-end gap-[3px] h-8 text-primary">
+<div class="w-1.5 h-3 bg-current rounded-sm"></div>
+<div class="w-1.5 h-5 bg-current rounded-sm"></div>
+<div class="w-1.5 h-8 bg-current rounded-sm"></div>
+<div class="w-1.5 h-4 bg-current rounded-sm"></div>
+<div class="w-1.5 h-2 bg-current rounded-sm"></div>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-white">EchoMechanic<span class="text-primary">.AI</span></h1>
+</div>
+<p class="text-slate-500 text-xs font-semibold tracking-[0.2em] uppercase">Manutenção Preditiva</p>
+</div>
+<div class="w-full max-w-[400px] bg-card-dark rounded-xl shadow-xl border border-card-border overflow-hidden">
+<div class="p-8">
+<div class="text-center mb-8">
+<h2 class="text-xl font-semibold text-white mb-2">Recuperar Acesso</h2>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Insira o email associado à sua conta para receber as instruções de recuperação.
+                    </p>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-300" for="email">
+                            Email
+                        </label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-slate-700/50 rounded-lg bg-input-bg text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all duration-200 sm:text-sm" id="email" name="email" placeholder="nome@empresa.com" required="" type="email"/>
+</div>
+</div>
+<button class="w-full flex justify-center py-3 px-4 rounded-lg shadow-sm text-sm font-bold text-black bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-[#1a1d21] transition-all duration-200" type="submit">
+                        Enviar Link
+                    </button>
+</form>
+</div>
+<div class="px-8 py-4 bg-[#1e2227] border-t border-card-border flex justify-center">
+<a class="group flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform duration-200">arrow_back</span>
+                    Voltar ao Login
+                </a>
+</div>
+</div>
+<p class="mt-8 text-center text-xs text-slate-600">
+            © 2024 EchoMechanic AI. Todos os direitos reservados.
+        </p>
+</main>
+
+</body></html>

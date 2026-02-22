@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Definições da Conta - EchoMechanic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#06b6d4", // Cyan-500
+                        primaryHover: "#0891b2", // Cyan-600
+                        "background-light": "#f3f4f6", // Gray-100
+                        "background-dark": "#080c10", // Deep dark
+                        "sidebar-light": "#ffffff",
+                        "sidebar-dark": "#0d161d",
+                        "card-light": "#ffffff",
+                        "card-dark": "#121a21",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#24303b",
+                        "text-light": "#111827",
+                        "text-dark": "#f9fafb",
+                        "muted-light": "#6b7280",
+                        "muted-dark": "#9ca3af",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.375rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d161d; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #24303b; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151; 
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #06b6d4;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #06b6d4;
+        }</style>
+</head>
+<body class="font-sans antialiased bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark min-h-screen flex dark">
+<aside class="w-64 bg-sidebar-light dark:bg-sidebar-dark border-r border-border-light dark:border-border-dark flex flex-col fixed h-full z-10 transition-colors duration-300">
+<div class="h-16 flex items-center px-6 border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3">
+<span class="material-icons text-primary text-2xl">medical_services</span> 
+<span class="font-bold text-lg tracking-wide text-gray-900 dark:text-white">EchoMechanic</span>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+<a class="flex items-center px-4 py-3 text-sm font-medium text-muted-light dark:text-muted-dark rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group" href="#">
+<span class="material-icons mr-3 text-xl group-hover:text-primary transition-colors">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center px-4 py-3 text-sm font-medium text-muted-light dark:text-muted-dark rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group" href="#">
+<span class="material-icons mr-3 text-xl group-hover:text-primary transition-colors">add_circle_outline</span>
+                Nova Análise
+            </a>
+<a class="flex items-center px-4 py-3 text-sm font-medium text-muted-light dark:text-muted-dark rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group" href="#">
+<span class="material-icons mr-3 text-xl group-hover:text-primary transition-colors">history</span>
+                Histórico
+            </a>
+<a class="flex items-center px-4 py-3 text-sm font-medium text-primary bg-primary/10 border border-primary/20 rounded-lg shadow-sm" href="#">
+<span class="material-icons mr-3 text-xl">settings</span>
+                Definições
+            </a>
+</nav>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+<img alt="Carlos M. Profile" class="w-10 h-10 rounded-md object-cover border border-border-light dark:border-border-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgthJxM39WNp5Q-f4Xo6ASE1p58KaWSgcI_UumxP3-u2LgexLCsqLitpgt-Es4vSXxIspepYMvUOLzSFbTvdvfyJgGQVc7_pSnIInAwPDrgi_68cmN0ZujGIrrB3lToeWko8c7N6ghDv4qWScR6hpzG5AZG9R6llpMB7OdxkA5pfNIWZRyy34c9l3nJhshZHB7TiwqTGkPAltYe6YX5DWUrXFq2wf895apOahJmU3jXKaeotPBbQBnDeTL4TZhCTVRIurnpj_TySzZ"/>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-gray-900 dark:text-white truncate">Carlos M.</p>
+<p class="text-xs text-muted-light dark:text-muted-dark truncate">Eng. Chefe</p>
+</div>
+<span class="material-icons text-muted-light dark:text-muted-dark text-lg">logout</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 ml-64 p-8 overflow-y-auto h-screen bg-background-light dark:bg-background-dark transition-colors duration-300">
+<header class="mb-8">
+<h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Definições da Conta</h1>
+<p class="text-muted-light dark:text-muted-dark text-sm">Gerencie suas preferências de perfil, segurança e notificações da plataforma.</p>
+</header>
+<div class="bg-card-light dark:bg-card-dark rounded-lg shadow-sm border border-border-light dark:border-border-dark overflow-hidden">
+<div class="p-6 border-b border-border-light dark:border-border-dark">
+<h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+<span class="material-icons mr-2 text-primary">person</span>
+                    Perfil do Utilizador
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="block text-xs font-medium text-muted-light dark:text-muted-dark uppercase tracking-wider" for="name">Nome Completo</label>
+<input class="w-full bg-gray-50 dark:bg-[#0d161d] border border-border-light dark:border-border-dark rounded-md px-4 py-2.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow" id="name" placeholder="Seu nome" type="text" value="Carlos Mendes"/>
+</div>
+<div class="space-y-1">
+<label class="block text-xs font-medium text-muted-light dark:text-muted-dark uppercase tracking-wider" for="email">Endereço de Email</label>
+<input class="w-full bg-gray-50 dark:bg-[#0d161d] border border-border-light dark:border-border-dark rounded-md px-4 py-2.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow" id="email" placeholder="seu@email.com" type="email" value="carlos.m@echomechanic.ai"/>
+</div>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="bg-primary hover:bg-primaryHover text-white font-medium py-2 px-4 rounded-md shadow-sm text-sm transition-colors flex items-center">
+<span class="material-icons text-sm mr-2">save</span>
+                        Atualizar Perfil
+                    </button>
+</div>
+</div>
+<div class="p-6 border-b border-border-light dark:border-border-dark bg-gray-50/50 dark:bg-transparent">
+<h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+<span class="material-icons mr-2 text-primary">notifications</span>
+                    Notificações
+                </h2>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-gray-900 dark:text-white">Alertas de Anomalia Crítica</p>
+<p class="text-xs text-muted-light dark:text-muted-dark">Receba notificações imediatas quando falhas críticas forem detetadas.</p>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle1" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 dark:bg-gray-700 cursor-pointer" for="toggle1"></label>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-gray-900 dark:text-white">Relatórios Semanais</p>
+<p class="text-xs text-muted-light dark:text-muted-dark">Resumo semanal do estado da frota de máquinas.</p>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle2" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 dark:bg-gray-700 cursor-pointer" for="toggle2"></label>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border-b border-border-light dark:border-border-dark">
+<h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+<span class="material-icons mr-2 text-primary">security</span>
+                    Segurança
+                </h2>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex-1 flex items-center justify-center px-4 py-2.5 border border-border-light dark:border-border-dark rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="material-icons text-sm mr-2">lock_reset</span>
+                        Alterar Password
+                    </button>
+<button class="flex-1 flex items-center justify-center px-4 py-2.5 border border-border-light dark:border-border-dark rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="material-icons text-sm mr-2">phonelink_lock</span>
+                        Ativar Autenticação de 2 Fatores
+                    </button>
+</div>
+</div>
+<div class="p-6 bg-red-50/10 dark:bg-red-900/5">
+<h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+<span class="material-icons mr-2 text-primary">privacy_tip</span>
+                    Dados &amp; Privacidade
+                </h2>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-sm text-muted-light dark:text-muted-dark">
+<p>Exporte seus dados de diagnóstico ou elimine permanentemente sua conta.</p>
+</div>
+<div class="flex gap-3">
+<button class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 transition-colors flex items-center">
+<span class="material-icons text-sm mr-1">download</span> Exportar Dados
+                        </button>
+<button class="bg-red-600/10 hover:bg-red-600/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-900/30 px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+<span class="material-icons text-sm mr-1">delete</span> Eliminar Conta
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 text-center text-xs text-muted-light dark:text-muted-dark">
+            © 2023 EchoMechanic AI. Todos os direitos reservados.
+        </div>
+</main>
+<script>
+        // Simple toggle logic if you were to add a button
+        // document.documentElement.classList.toggle('dark');
+    </script>
+
+</body></html>

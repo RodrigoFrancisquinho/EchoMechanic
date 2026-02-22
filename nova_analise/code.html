@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EchoMechanic AI - Nova Análise</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "primary-hover": "#0ea5d6",
+                        "accent-orange": "#FF9F1C",
+                        "accent-red": "#EF4444",
+                        "background-dark": "#0B1215",
+                        "surface-dark": "#151F24",
+                        "surface-lighter": "#1E2A30",
+                        "text-dim": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Inter", sans-serif;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+        .animate-pulse-ring {
+            animation: pulse-ring 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes flatline-pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; box-shadow: 0 0 10px rgba(19, 182, 236, 0.5); }
+            100% { opacity: 0.5; }
+        }
+        .flatline {
+            animation: flatline-pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white overflow-x-hidden selection:bg-primary selection:text-background-dark h-screen flex flex-col">
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-[#233f48] bg-background-dark/90 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3 text-white cursor-pointer">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">graphic_eq</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">EchoMechanic<span class="text-primary">.AI</span></h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-white transition-colors border-b-2 border-primary pb-0.5" href="#">Nova Análise</a>
+<a class="text-sm font-medium text-text-dim hover:text-white transition-colors" href="#">Histórico</a>
+<a class="text-sm font-medium text-text-dim hover:text-white transition-colors" href="#">Frota</a>
+<a class="text-sm font-medium text-text-dim hover:text-white transition-colors" href="#">Relatórios</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-3 pr-4 border-r border-surface-lighter">
+<span class="material-symbols-outlined text-text-dim">notifications</span>
+<span class="material-symbols-outlined text-text-dim">settings</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-lighter flex items-center justify-center text-primary font-bold text-xs border border-primary/20">
+                        JD
+                    </div>
+<span class="hidden sm:block text-sm font-medium text-white">John Doe</span>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-16 flex-1 flex flex-col lg:flex-row h-full overflow-hidden">
+<section class="flex-1 relative flex flex-col items-center justify-center p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-surface-lighter bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface-dark to-background-dark z-10">
+<div class="absolute top-8 left-8 flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-lighter border border-primary/20 backdrop-blur-sm">
+<span class="relative flex h-2.5 w-2.5">
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+</span>
+<span class="text-xs font-mono font-medium text-white tracking-wide">GEMINI 3 PRO: ONLINE</span>
+</div>
+<div class="w-full max-w-2xl flex flex-col items-center gap-10">
+<div class="text-center space-y-2">
+<h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Nova Análise</h1>
+<p class="text-text-dim">Prepare o ambiente para gravação</p>
+</div>
+<div class="w-full h-64 bg-surface-dark/50 rounded-2xl border border-surface-lighter/50 relative overflow-hidden backdrop-blur-sm shadow-[0_0_30px_rgba(0,0,0,0.3)]">
+<div class="absolute inset-0 bg-[linear-gradient(rgba(19,182,236,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(19,182,236,0.05)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+<div class="absolute top-1/2 left-0 right-0 h-[2px] bg-primary/40 flatline"></div>
+<div class="absolute top-4 right-4 font-mono text-xs text-text-dim">
+                        INPUT: MIC DEFAULT <span class="text-primary ml-2">● READY</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-6">
+<div class="font-mono text-4xl text-text-dim/50 font-light tracking-wider tabular-nums">
+                        00:00:00
+                    </div>
+<button class="group relative flex items-center justify-center outline-none">
+<div class="absolute inset-0 rounded-full bg-primary/10 animate-pulse-ring"></div>
+<div class="absolute inset-0 rounded-full bg-primary/5 animate-pulse-ring delay-1000"></div>
+<div class="relative w-24 h-24 rounded-full bg-surface-dark border-4 border-surface-lighter group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(19,182,236,0.4)] transition-all duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-white group-hover:text-primary transition-colors">mic</span>
+</div>
+</button>
+<div class="flex flex-col items-center gap-3">
+<p class="text-lg font-medium text-white tracking-wide">Toque para Gravar</p>
+<p class="text-sm text-text-dim">ou arraste ficheiro de áudio</p>
+<div class="mt-2 text-[10px] text-text-dim/60 font-mono tracking-tight border border-surface-lighter px-2 py-1 rounded bg-surface-lighter/30">
+                            Formatos suportados: .WAV, .MP3, .M4A (Max 50MB)
+                        </div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-6 flex gap-6 opacity-30 grayscale pointer-events-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">memory</span>
+<span class="font-bold text-xs">Gemini 3 Pro</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">cloud_sync</span>
+<span class="font-bold text-xs">Stitch</span>
+</div>
+</div>
+</section>
+<section class="w-full lg:w-[400px] bg-surface-dark border-l border-surface-lighter flex flex-col h-full overflow-y-auto relative shadow-2xl z-20">
+<div class="p-6 border-b border-surface-lighter bg-surface-lighter/30 backdrop-blur sticky top-0 z-10">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<h3 class="text-lg font-bold text-white">Pronto para Analisar</h3>
+</div>
+<p class="text-xs text-text-dim">Siga as instruções para obter o melhor diagnóstico.</p>
+</div>
+<div class="p-6 flex-1">
+<div class="space-y-6">
+<div class="flex gap-4 group">
+<div class="w-10 h-10 rounded-lg bg-surface-lighter flex items-center justify-center shrink-0 border border-surface-lighter group-hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-primary">settings_overscan</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white mb-1">Posicionamento</h4>
+<p class="text-xs text-text-dim leading-relaxed">Aproxime o dispositivo a cerca de 30cm da fonte principal do ruído mecânico.</p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="w-10 h-10 rounded-lg bg-surface-lighter flex items-center justify-center shrink-0 border border-surface-lighter group-hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-accent-orange">graphic_eq</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white mb-1">Ambiente</h4>
+<p class="text-xs text-text-dim leading-relaxed">Evite conversas em fundo ou ruído de vento. O silêncio circundante melhora a precisão.</p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="w-10 h-10 rounded-lg bg-surface-lighter flex items-center justify-center shrink-0 border border-surface-lighter group-hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-primary">timer</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white mb-1">Duração</h4>
+<p class="text-xs text-text-dim leading-relaxed">Grave pelo menos 10 segundos de som constante para permitir a análise de padrões.</p>
+</div>
+</div>
+<div class="mt-8 p-4 rounded-lg bg-surface-lighter/20 border border-dashed border-primary/20 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-3xl text-primary/50 mb-2">mic_external_on</span>
+<p class="text-xs text-text-dim">Microfone externo recomendado para diagnósticos de alta frequência.</p>
+</div>
+</div>
+</div>
+<div class="p-6 border-t border-surface-lighter bg-surface-dark sticky bottom-0">
+<button class="w-full flex items-center justify-center h-12 rounded bg-surface-lighter hover:bg-surface-lighter/80 text-text-dim hover:text-white font-medium text-sm border border-surface-lighter transition-all cursor-not-allowed opacity-50" disabled="">
+                    Aguardando áudio...
+                </button>
+</div>
+</section>
+</main>
+
+</body></html>

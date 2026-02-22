@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Planos e Preços | EchoMechanic AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "primary-hover": "#0ea5d6",
+                        "accent-orange": "#FF9F1C",
+                        "background-dark": "#0B1215",
+                        "surface-dark": "#151F24",
+                        "surface-lighter": "#1E2A30",
+                        "text-dim": "#94a3b8",
+                    },
+                    fontFamily: { "display": ["Inter", "sans-serif"], "body": ["Inter", "sans-serif"] },
+                    backgroundImage: { 'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)" }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0B1215;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1E2A30;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white h-screen overflow-hidden flex font-body antialiased selection:bg-primary selection:text-white">
+
+    <aside class="w-64 bg-surface-dark border-r border-surface-lighter flex flex-col hidden md:flex shrink-0 z-50">
+        <div class="h-16 flex items-center px-6 border-b border-surface-lighter">
+            <div class="flex items-center gap-2 font-bold text-xl tracking-tight">
+                <img src="images/logo.png" onerror="this.style.display='none'" class="h-8 w-8 mr-2" alt="Logo">
+                <span class="text-white">Echo<span class="text-primary">Mechanic</span></span>
+            </div>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto py-6 px-3 space-y-1">
+            
+            <a href="dashboard.html" class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:text-white hover:bg-surface-lighter rounded-lg transition-all group">
+                <span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+                <span class="font-medium">Dashboard</span>
+            </a>
+
+            <a href="adicionar_maquina.html" class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:text-white hover:bg-surface-lighter rounded-lg transition-all group">
+                <span class="material-symbols-outlined group-hover:text-primary transition-colors">add_circle</span>
+                <span class="font-medium">Nova Análise</span>
+            </a>
+
+            <a href="#" class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:text-white hover:bg-surface-lighter rounded-lg transition-all group">
+                <span class="material-symbols-outlined group-hover:text-primary transition-colors">construction</span>
+                <span class="font-medium">Registo Equip.</span>
+            </a>
+
+            <a href="historico.html" class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:text-white hover:bg-surface-lighter rounded-lg transition-all group">
+                <span class="material-symbols-outlined group-hover:text-primary transition-colors">history</span>
+                <span class="font-medium">Histórico</span>
+            </a>
+
+            <a href="chat.html" class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:text-white hover:bg-surface-lighter rounded-lg transition-all group">
+                <span class="material-symbols-outlined group-hover:text-primary transition-colors">smart_toy</span>
+                <span class="font-medium">Mecânico Virtual</span>
+            </a>
+            
+            <div class="my-4 border-t border-surface-lighter mx-3"></div>
+
+            <a href="pricing.html" class="flex items-center gap-3 px-3 py-2 bg-surface-lighter text-primary rounded-lg transition-all group mb-1 shadow-sm ring-1 ring-white/5">
+                <span class="material-symbols-outlined text-primary">workspace_premium</span>
+                <span class="font-bold">Planos</span>
+            </a>
+
+            <a href="definicoes.html" class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:text-white hover:bg-surface-lighter rounded-lg transition-all group">
+                <span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+                <span class="font-medium">Definições</span>
+            </a>
+        </nav>
+
+        <div class="p-4 border-t border-surface-lighter bg-surface-dark">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white font-bold shadow-lg">
+                    JD
+                </div>
+                <div class="overflow-hidden">
+                    <p class="text-sm font-bold text-white truncate">João Dias</p>
+                    <p class="text-xs text-text-dim truncate">Mecânico Chefe</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+        
+        <header class="md:hidden h-16 bg-surface-dark border-b border-surface-lighter flex items-center justify-between px-4 shrink-0">
+            <span class="font-bold text-lg">Planos</span>
+            <button class="text-gray-400"><span class="material-symbols-outlined">menu</span></button>
+        </header>
+
+        <div class="flex-1 overflow-y-auto relative z-10 w-full p-4 md:p-8 bg-background-dark">
+            
+            <div class="absolute inset-0 bg-[url('https://placeholder.pics/svg/20')] opacity-[0.03] pointer-events-none fixed"></div>
+
+            <div class="w-full max-w-6xl mx-auto mt-4 md:mt-12 mb-12 relative z-10">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">Planos e Preços</h1>
+                <p class="text-text-dim text-center mb-12">Escolha o plano ideal para a sua oficina.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    
+                    <div class="bg-surface-dark p-8 rounded-2xl border border-surface-lighter flex flex-col items-center hover:border-gray-600 transition-colors">
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-300">Básico</h2>
+                        <div class="text-4xl font-bold mb-6">0€</div>
+                        <ul class="text-text-dim mb-8 space-y-4 text-center w-full">
+                            <li class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-gray-500 text-sm">check</span>Funcionalidades básicas</li>
+                            <li class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-gray-500 text-sm">check</span>Acesso limitado</li>
+                            <li class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-gray-500 text-sm">check</span>Suporte da comunidade</li>
+                        </ul>
+                        <button class="mt-auto px-8 py-3 rounded-lg bg-surface-lighter text-white hover:bg-surface-lighter/80 transition-all w-full font-medium border border-transparent cursor-not-allowed opacity-50">
+                            Plano Atual
+                        </button>
+                    </div>
+
+                    <div class="bg-surface-dark p-8 rounded-2xl border-2 border-primary relative flex flex-col items-center shadow-2xl shadow-primary/10 scale-100 md:scale-105 z-10">
+                        <div class="absolute -top-4 bg-primary text-background-dark text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                            Recomendado
+                        </div>
+                        <h2 class="text-2xl font-semibold mb-4 text-primary">Profissional</h2>
+                        <div class="text-5xl font-bold mb-6">29,90€</div>
+                        <ul class="text-gray-300 mb-8 space-y-4 text-center w-full">
+                            <li class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span>Tudo do Básico</li>
+                            <li class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span>Análises avançadas</li>
+                            <li class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span>Suporte 24/7</li>
+                        </ul>
+                        
+                        <a href="https://buy.stripe.com/test_00w14nfEm5glb918VV2wU00" 
+                           target="_blank"
+                           class="mt-auto px-8 py-3 rounded-lg bg-primary text-white hover:bg-primary-hover transition-all w-full text-center font-bold shadow-lg shadow-primary/25">
+                            Subscrever Agora
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

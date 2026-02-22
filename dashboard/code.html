@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Estado Vazio | EchoMechanic AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "primary-hover": "#0ea5d6",
+                        "accent-orange": "#FF9F1C",
+                        "background-dark": "#0B1215",
+                        "surface-dark": "#151F24",
+                        "surface-lighter": "#1E2A30",
+                        "text-dim": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: "Inter", sans-serif }
+        .text-glow { text-shadow: 0 0 10px rgba(19, 182, 236, 0.5) }
+        .neon-border { box-shadow: 0 0 5px rgba(19, 182, 236, 0.3) }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1215; }
+        ::-webkit-scrollbar-thumb { background: #1E2A30; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #13b6ec; }
+    </style>
+</head>
+<body class="bg-background-dark text-white overflow-hidden selection:bg-primary selection:text-background-dark font-body antialiased">
+<div class="flex h-screen w-full">
+<aside class="w-72 h-full bg-surface-dark border-r border-surface-lighter flex flex-col hidden md:flex shrink-0">
+<div class="h-20 flex items-center px-6 border-b border-surface-lighter bg-surface-dark/50">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">graphic_eq</span>
+</div>
+<h2 class="text-white text-lg font-bold tracking-tight">EchoMechanic<span class="text-primary">.AI</span></h2>
+</div>
+</div>
+<nav class="flex-1 py-8 px-4 space-y-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-white rounded-lg border border-primary/20 shadow-[0_0_10px_rgba(19,182,236,0.1)] group relative overflow-hidden" href="#">
+<div class="absolute inset-0 bg-primary/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+<span class="material-symbols-outlined text-primary relative z-10">dashboard</span>
+<span class="font-semibold text-sm relative z-10">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-text-dim hover:text-white hover:bg-surface-lighter rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">add_circle</span>
+<span class="font-medium text-sm">Nova Análise</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-text-dim hover:text-white hover:bg-surface-lighter rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">history</span>
+<span class="font-medium text-sm">Histórico</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-text-dim hover:text-white hover:bg-surface-lighter rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="font-medium text-sm">Definições</span>
+</a>
+</nav>
+<div class="p-4 border-t border-surface-lighter bg-surface-dark">
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-lighter transition-colors cursor-pointer border border-transparent hover:border-surface-lighter">
+<div class="size-10 rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                        JD
+                    </div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold text-white truncate">João Dias</p>
+<p class="text-xs text-text-dim truncate">Mecânico Chefe</p>
+</div>
+<span class="material-symbols-outlined text-text-dim ml-auto text-lg">expand_more</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden relative bg-background-dark">
+<div class="absolute inset-0 bg-[url('https://placeholder.pics/svg/20')] opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#325a67 1px, transparent 1px); background-size: 24px 24px;"></div>
+<header class="h-20 border-b border-surface-lighter bg-background-dark/80 backdrop-blur-md flex items-center justify-between px-6 lg:px-8 z-20 shrink-0">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-text-dim hover:text-white p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div>
+<h1 class="text-2xl font-bold text-white tracking-tight">Minha Oficina</h1>
+<p class="text-xs text-text-dim hidden sm:block">Gerencie a saúde da sua frota em tempo real</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-text-dim hover:text-white hover:bg-surface-lighter rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center h-10 px-4 sm:px-6 rounded-lg bg-primary hover:bg-primary-hover text-background-dark font-bold text-sm shadow-[0_0_15px_rgba(19,182,236,0.3)] hover:shadow-[0_0_25px_rgba(19,182,236,0.5)] transition-all group">
+<span class="material-symbols-outlined text-xl mr-1 sm:mr-2 group-hover:rotate-90 transition-transform">add</span>
+<span class="hidden sm:inline">Nova Máquina</span>
+<span class="sm:hidden">Novo</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-4 lg:p-8 scroll-smooth">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 pb-12 h-full lg:h-auto">
+<div class="lg:col-span-2 flex flex-col items-center justify-center min-h-[500px] border border-dashed border-surface-lighter rounded-xl bg-surface-dark/30 p-8 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background-dark/50 pointer-events-none"></div>
+<div class="relative mb-8 group z-10">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl opacity-50"></div>
+<div class="relative size-24 bg-surface-lighter rounded-full flex items-center justify-center border border-surface-lighter shadow-[0_0_30px_rgba(0,0,0,0.5)] group-hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-[40px] text-text-dim group-hover:text-white transition-colors">warehouse</span>
+</div>
+<div class="absolute top-1 right-1 size-4 bg-accent-orange rounded-full border-4 border-surface-dark"></div>
+</div>
+<h2 class="text-2xl md:text-3xl font-bold text-white mb-3 z-10">Ainda não há máquinas monitorizadas</h2>
+<p class="text-text-dim max-w-md mb-8 text-base leading-relaxed z-10">
+                            Adicione o seu primeiro equipamento ou faça uma análise rápida para começar a receber diagnósticos em tempo real.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4 z-10 w-full sm:w-auto">
+<button class="flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-background-dark font-bold rounded-lg shadow-[0_0_15px_rgba(19,182,236,0.3)] transition-all hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+                                Registar Máquina
+                            </button>
+<button class="flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-surface-lighter hover:border-primary/50 text-white font-medium rounded-lg hover:bg-surface-lighter transition-all group">
+<span class="material-symbols-outlined text-primary group-hover:animate-pulse">bolt</span>
+                                Fazer Análise Rápida
+                            </button>
+</div>
+</div>
+<div class="lg:col-span-1">
+<div class="bg-surface-dark border border-surface-lighter rounded-xl overflow-hidden flex flex-col h-auto lg:h-[calc(100vh-140px)] sticky top-4 shadow-xl">
+<div class="p-5 border-b border-surface-lighter flex justify-between items-center bg-surface-dark/95 backdrop-blur">
+<h3 class="font-bold text-white text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">history_edu</span>
+                                    Atividade
+                                </h3>
+</div>
+<div class="flex-1 overflow-y-auto p-8 flex flex-col items-center justify-center text-center opacity-70">
+<div class="size-16 rounded-full bg-surface-lighter/50 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl text-text-dim">history_toggle_off</span>
+</div>
+<p class="text-white font-medium mb-1">Sem atividades recentes</p>
+<p class="text-xs text-text-dim max-w-[200px]">As atividades de diagnóstico e manutenção aparecerão aqui.</p>
+</div>
+<div class="p-4 mt-auto border-t border-surface-lighter bg-gradient-to-b from-surface-dark to-surface-lighter/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-text-dim text-base">auto_awesome</span>
+<span class="text-xs font-bold text-text-dim uppercase tracking-wider">Gemini 3 Pro Insight</span>
+</div>
+<p class="text-xs text-text-dim/60 leading-relaxed italic">
+                                    Aguardando dados das máquinas para gerar insights preditivos e recomendações de manutenção automáticas.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
