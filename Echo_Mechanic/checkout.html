@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Checkout | EchoMechanic AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "primary-hover": "#0ea5d6",
+                        "accent-orange": "#FF9F1C",
+                        "background-dark": "#0B1215",
+                        "surface-dark": "#151F24",
+                        "surface-lighter": "#1E2A30",
+                        "text-dim": "#94a3b8",
+                    },
+                    fontFamily: { "display": ["Inter", "sans-serif"], "body": ["Inter", "sans-serif"] },
+                    backgroundImage: { 'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)" }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0B1215;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1E2A30;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white h-screen overflow-hidden flex font-body antialiased relative">
+    <div class="absolute inset-0 bg-[url('https://placeholder.pics/svg/20')] opacity-[0.03] pointer-events-none z-0">
+    </div>
+    <div class="flex-1 flex h-screen overflow-auto relative z-10 w-full flex-col items-center p-4 md:p-8">
+
+        <div class="w-full max-w-5xl mt-8 mb-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+                <!-- Coluna Esquerda: Resumo (4 colunas em 12) -->
+                <div class="md:col-span-5 lg:col-span-4 space-y-6">
+                    <h1 class="text-3xl font-bold mb-8">Resumo do Pedido</h1>
+
+                    <div class="bg-surface-dark p-6 rounded-2xl border border-surface-lighter shadow-lg">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h2 class="text-xl font-semibold text-white">Plano Profissional</h2>
+                                    <p class="text-text-dim text-sm mt-1">Cobrança mensal</p>
+                                </div>
+                                <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+                            </div>
+
+                            <hr class="border-surface-lighter my-2">
+
+                            <div class="flex justify-between items-end">
+                                <span class="text-text-dim">Total</span>
+                                <div class="text-right">
+                                    <span class="text-3xl font-bold text-primary">29,90€</span>
+                                    <span class="text-text-dim text-sm"> / mês</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 p-4 bg-primary/10 rounded-xl border border-primary/20">
+                        <span class="material-symbols-outlined text-primary">security</span>
+                        <div>
+                            <p class="text-sm font-medium text-white">Pagamento 100% Seguro</p>
+                            <p class="text-xs text-text-dim mt-1">Os seus dados são protegidos por encriptação SSL de
+                                256-bits.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Pagamento (8 colunas em 12 na MD, 8 na LG) -->
+                <div
+                    class="md:col-span-7 lg:col-span-8 bg-surface-dark p-8 rounded-2xl border border-surface-lighter shadow-xl">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-accent-orange">credit_card</span>
+                        Pagamento
+                    </h2>
+
+                    <form class="space-y-6">
+                        <!-- Nome no Cartão -->
+                        <div>
+                            <label class="block text-sm font-medium text-text-dim mb-2">Nome no Cartão</label>
+                            <input type="text" placeholder="Como aparece no cartão"
+                                class="w-full bg-surface-lighter border-surface-lighter rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder-gray-600">
+                        </div>
+
+                        <!-- Número do Cartão -->
+                        <div>
+                            <label class="block text-sm font-medium text-text-dim mb-2">Número do Cartão</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span class="material-symbols-outlined text-gray-500">credit_card</span>
+                                </span>
+                                <input type="text" placeholder="0000 0000 0000 0000"
+                                    class="w-full bg-surface-lighter border-surface-lighter rounded-lg pl-10 pr-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder-gray-600">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <!-- Validade -->
+                            <div>
+                                <label class="block text-sm font-medium text-text-dim mb-2">Validade</label>
+                                <input type="text" placeholder="MM/AA"
+                                    class="w-full bg-surface-lighter border-surface-lighter rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder-gray-600">
+                            </div>
+
+                            <!-- CVC -->
+                            <div>
+                                <label class="block text-sm font-medium text-text-dim mb-2">CVC</label>
+                                <div class="relative">
+                                    <input type="text" placeholder="123"
+                                        class="w-full bg-surface-lighter border-surface-lighter rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent placeholder-gray-600">
+                                    <span class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <span class="material-symbols-outlined text-gray-500 text-sm">help</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <a href="success.html"
+                                class="block w-full bg-primary hover:bg-primary-hover text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/25 transition-all text-center text-lg transform hover:scale-[1.01]">
+                                Pagar 29,90€
+                            </a>
+                        </div>
+
+                        <div class="flex justify-center gap-4 mt-4 opacity-50 grayscale">
+                            <!-- Placeholder icons for card brands (text for now as images might break style if external links are restricted without verification, but using simple spans/svgs is safer or just implies visuals) -->
+                            <!-- Using simple text or emojis for visuals since external images might check placeholders -->
+                            <span class="text-xs text-text-dim">VISA</span>
+                            <span class="text-xs text-text-dim">MasterCard</span>
+                            <span class="text-xs text-text-dim">AMEX</span>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

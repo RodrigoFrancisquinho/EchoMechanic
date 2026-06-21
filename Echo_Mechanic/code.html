@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - EchoMechanic AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13b6ec",
+                        "primary-hover": "#0ea5d6",
+                        "accent-orange": "#FF9F1C",
+                        "background-dark": "#0B1215",
+                        "surface-dark": "#151F24",
+                        "surface-lighter": "#1E2A30",
+                        "text-dim": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Inter", sans-serif
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white h-screen flex flex-col items-center justify-center relative overflow-hidden selection:bg-primary selection:text-background-dark">
+<div class="absolute inset-0 bg-[url('https://placeholder.pics/svg/20')] opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#325a67 1px, transparent 1px); background-size: 32px 32px;"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="w-full max-w-[420px] px-6 relative z-10">
+<div class="flex flex-col items-center mb-10">
+<a class="group flex flex-col items-center gap-3 transition-transform hover:scale-105 duration-300" href="#">
+<div class="size-12 text-primary flex items-center justify-center bg-surface-lighter rounded-xl border border-primary/20 shadow-[0_0_15px_rgba(19,182,236,0.15)] group-hover:shadow-[0_0_25px_rgba(19,182,236,0.3)] transition-all">
+<span class="material-symbols-outlined text-[32px]">graphic_eq</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight">EchoMechanic<span class="text-primary">.AI</span></h2>
+</a>
+</div>
+<div class="bg-surface-dark border border-surface-lighter rounded-2xl shadow-2xl p-8 backdrop-blur-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+<h1 class="text-xl font-bold text-white mb-1 text-center">Bem-vindo de volta</h1>
+<p class="text-text-dim text-sm text-center mb-8">Aceda à sua garagem digital de manutenção.</p>
+<form action="#" class="space-y-5" method="POST">
+<div class="space-y-1">
+<label class="block text-sm font-medium text-gray-300" for="email">Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-500 text-lg">mail</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-surface-lighter rounded-lg leading-5 bg-surface-lighter text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm transition-colors" id="email" name="email" placeholder="tecnico@oficina.com" required="" type="email"/>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<label class="block text-sm font-medium text-gray-300" for="password">Password</label>
+<a class="text-xs text-primary hover:text-primary-hover transition-colors" href="#">Esqueceu-se?</a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-500 text-lg">lock</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-surface-lighter rounded-lg leading-5 bg-surface-lighter text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm transition-colors" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<button class="w-full flex items-center justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-background-dark bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-surface-dark transition-all shadow-[0_0_15px_rgba(19,182,236,0.2)] hover:shadow-[0_0_20px_rgba(19,182,236,0.4)]" type="submit">
+                    Entrar
+                </button>
+</form>
+<div class="relative my-6">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-surface-lighter"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-surface-dark text-text-dim">Ou continuar com</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-3 px-4 py-3 border border-surface-lighter rounded-lg shadow-sm bg-transparent hover:bg-surface-lighter text-sm font-medium text-white transition-colors group" type="button">
+<svg class="h-5 w-5 text-white group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"></path>
+</svg>
+<span>Entrar com Google</span>
+</button>
+</div>
+<p class="mt-8 text-center text-sm text-text-dim">
+            Ainda não tem conta? 
+            <a class="font-semibold text-primary hover:text-primary-hover transition-colors" href="#">Criar conta grátis</a>
+</p>
+</div>
+<div class="absolute bottom-6 w-full text-center px-6">
+<div class="flex items-center justify-center gap-2 text-xs text-text-dim/60 mb-2">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+<span>Secured by Gemini 3 Pro</span>
+</div>
+<div class="flex justify-center gap-6 text-xs text-text-dim/40">
+<a class="hover:text-text-dim transition-colors" href="#">Privacidade</a>
+<a class="hover:text-text-dim transition-colors" href="#">Termos</a>
+<a class="hover:text-text-dim transition-colors" href="#">Ajuda</a>
+</div>
+</div>
+
+</body></html>
